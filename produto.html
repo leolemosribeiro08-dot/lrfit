@@ -1,0 +1,193 @@
+<html>
+<head>
+        <meta charset="UTF-8">
+        <title>Produto - LRFit</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="produto.css">
+</head>
+
+
+
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <strong>LR</strong><span>FIT</span>
+    </a>
+    <ul class="menu"> 
+      <li><a href="suplementos/suplement.html">Suplementos</a></li>
+      <li><a href="calculadora get/calculadoraget.html">Calculadora get</a></li>
+      <li><a href="dietas.html">Dietas</a></li>
+      <li><a href="contato/contato.html">Contato</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+
+    
+  </nav>
+</header>
+
+<div id="cart" class="cart">
+  <h2>Carrinho</h2>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: R$ <span id="cart-total">0</span></div>
+  <button class="btn finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+
+  <button class="btn fechar" onclick="toggleCart()">Fechar</button>
+</div>
+
+<button class="cart-toggle" onclick="toggleCart()">🛒</button>
+
+
+
+
+
+
+<div class="produto-page">
+
+  <!-- GALERIA -->
+  <div class="galeria">
+    <div class="miniaturas">
+      <img id="thumb1">
+      <img id="thumb2">
+   
+    </div>
+
+    <div class="imagem-principal">
+      <img id="imagem">
+    </div>
+  </div>
+
+  <!-- INFO -->
+  <div class="info-produto">
+
+    <h1 id="nome"></h1>
+
+    <p class="preco" id="preco"></p>
+    <p class="parcelamento">ou em 3x sem juros</p>
+
+    <p id="descricao"></p>
+
+    <label>Quantidade</label>
+
+    <div class="compra-area">
+      <div class="quantidade">
+        <button onclick="diminuir()">-</button>
+        <span id="qtd">1</span>
+        <button onclick="aumentar()">+</button>
+      </div>
+
+      <button class="btn-comprar" onclick="comprar()">Comprar</button>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  // 🔥 "Banco de dados" dos produtos
+  const produtos = {
+    1: {
+      nome: "Creatina Monohidratada Black Skull 300g",
+      preco: "R$ 50,00",
+      valor: 50.00,
+      imagem: "imgsuplementos/creatina.jpg",
+      descricao: "Creatina pura para ganho de força e massa muscular."
+    },
+    2: {
+      nome: "Creatina Monohidratada Max Titanium 300g",
+      preco: "R$ 75,00",
+      valor: 75.00,
+      imagem: "imgsuplementos/creatinamaxtitanium.jpg",
+      descricao: "Alta qualidade, melhora desempenho e recuperação."
+    },
+    3: {
+      nome: "Creatina Monohidratada growth 250g",
+      preco: "R$ 50,00",
+      valor: 50.00,
+      imagem: "imgsuplementos/creatinagrowth.png",
+      descricao: "Excelente custo-benefício para treino diário."
+    },
+
+    4: {
+      nome: "Whey Protein Concentrado 1Kg - Growth",
+      preco: "R$ 155,00",
+      valor: 155.00,
+      imagem: "imgsuplementos/wheygrowth.png",
+      descricao: "Whey mais avaliado do Brasil."
+    },
+    5: {
+      nome: "Whey Protein 100% Pote 900g - Dark Lab",
+      preco: "R$ 150,00",
+      valor: 150.00,
+      imagem: "imgsuplementos/whey-protein-100-dark-lab-900g.png",
+      descricao: "Alta qualidade, melhora desempenho e recuperação."
+    },
+    6: {
+      nome: "Creatina Monohidratada Probiótica 300g",
+      preco: "R$ 40,00",
+      valor: 40.00,
+      imagem: "img/creatina3.png",
+      descricao: "Excelente custo-benefício para treino diário."
+    },
+
+    7: {
+      nome: "Creatina Monohidratada Black Skull 300g",
+      preco: "R$ 50,00",
+      valor: 50.00,
+      imagem: "img/creatina1.png",
+      descricao: "Creatina pura para ganho de força e massa muscular."
+    },
+    8: {
+      nome: "Creatina Monohidratada Max Titanium 300g",
+      preco: "R$ 75,00",
+      valor: 75.00,
+      imagem: "imgsuplementos/creatinamaxtitanium.jpg",
+      descricao: "Alta qualidade, melhora desempenho e recuperação."
+    },
+    9: {
+      nome: "Creatina Monohidratada Probiótica 300g",
+      preco: "R$ 40,00",
+      valor: 40.00,
+      imagem: "img/creatina3.png",
+      descricao: "Excelente custo-benefício para treino diário."
+    }
+  };
+
+  // 📌 Pega o ID da URL
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  const produto = produtos[id];
+
+  // ⚠️ Se não existir
+  if (!produto) {
+    document.body.innerHTML = "<h1>Produto não encontrado</h1>";
+  } else {
+    document.getElementById("nome").innerText = produto.nome;
+    document.getElementById("preco").innerText = produto.preco;
+    document.getElementById("imagem").src = produto.imagem;
+    document.getElementById("descricao").innerText = produto.descricao;
+  }
+
+  function comprar() {
+  if (!produto) {
+    alert("Produto não encontrado.");
+    return;
+  }
+
+  const quantidade = Number(document.getElementById("qtd").innerText);
+
+  addToCart(id, produto.nome, produto.valor, quantidade);
+}
+</script>
+
+
+
+<div id="mensagem-carrinho" class="mensagem-carrinho">
+  Produto adicionado ao carrinho!
+</div>
+
+<script src="suplementos.js"></script>
+</body>
+</html>

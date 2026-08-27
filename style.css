@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* HEADER */
+.header {
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.427);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+/* LOGO */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #E30613;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #111111;
+}
+
+/* MENU DESKTOP */
+.menu {
+    display: flex;
+    gap: 2.8rem;
+    list-style: none;
+    align-items: center;
+}
+
+.fechar-menu {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #111;
+    align-self: flex-end;
+    margin-bottom: 20px;
+    display: none;
+}
+.menu a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #E30613;
+}
+
+/* BOTÃO HAMBURGUER */
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #111;
+}
+
+/* CARRINHO */
+.cart-toggle {
+    background: transparent;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+
+
+.container {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.categoria {
+    margin-bottom: 50px;
+}
+
+.titulo-categoria {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #111;
+}
+
+.carrossel-produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+}
+
+.product img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #040505d1;
+    margin-bottom: 20px;
+}
+
+.btn {
+   background-color:#222222;;
+    color: #fff;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #bdbdbd;
+    color: #000000;
+    font-size: 17px;
+}
+
+
+
+
+
+.product p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+
+
+
+/* CARRINHO LATERAL */
+.cart {
+    background-color: #fffffff4;
+    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.534);
+    position: fixed;
+    top: 0;
+    right: -300px;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 9999;
+    transition: 0.3s;
+}
+
+.cart.open {
+    right: 0;
+}
+
+.cart .fechar {
+    background: rgb(186, 0, 0);
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cart .finalizar {
+    background: rgb(28, 152, 0);
+    margin-top: 10px;
+    width: 100%;
+}
+
+.cart-total {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.remove-btn {
+    background: red;
+    border: none;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    padding: 2px 6px;
+}
+
+.mensagem-carrinho {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s;
+  z-index: 10000;
+}
+
+.mensagem-carrinho.mostrar {
+  opacity: 1;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+}
+
+.slides a {
+  min-width: 100%;
+  height: 100%;
+  flex-shrink: 0;
+  display: block;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.btn-slider {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: white;
+  border: none;
+  font-size: 35px;
+  padding: 10px 15px;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 1rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .menu-btn {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 2;
+    }
+
+    .cart-toggle {
+        order: 3;
+    }
+
+ .menu {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background: white;
+    box-shadow: 3px 0 10px rgba(0,0,0,0.15);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 20px;
+    z-index: 9998;
+    transition: 0.3s;
+}
+
+    .fechar-menu {
+    display: block;
+}
+
+    .menu li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .menu a {
+        display: block;
+        width: 100%;
+        padding: 14px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .container {
+    margin: 30px auto;
+    padding: 0 15px;
+}
+
+.categoria {
+    margin-bottom: 35px;
+}
+
+.titulo-categoria {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    padding-left: 5px;
+}
+
+.carrossel-produtos {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 10px;
+}
+
+.carrossel-produtos::-webkit-scrollbar {
+    display: none;
+}
+
+.carrossel-produtos .product {
+    min-width: 280px;
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+    padding: 20px;
+}
+
+.product img {
+    height: 220px;
+}
+
+  .banner {
+    height: 280px;
+    max-width: 480px;
+  }
+
+  .banner img {
+    object-fit: cover;
+    object-position: center;
+  }
+
+}
+
+    

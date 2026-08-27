@@ -1,0 +1,157 @@
+/* ====================== RESET ====================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* ====================== HEADER ====================== */
+.header {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #E30613;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #111111;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    gap: 2.8rem;
+    list-style: none;
+}
+
+.menu a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #E30613;
+}
+
+
+/* ====================== RESPONSIVO ====================== */
+@media (max-width: 768px) {
+    .nav {
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        font-size: 2rem;
+    }
+    
+    .menu {
+        gap: 1.8rem;
+    }
+    
+    .menu a {
+        font-size: 1.05rem;
+    }
+}
+
+/* ====================== BOTÃO CTA (caso queira adicionar depois) ====================== */
+.cta-button {
+    background-color: #E30613;
+    color: #FFFFFF;
+    padding: 12px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.02rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(227, 6, 19, 0.25);
+}
+
+.cta-button:hover {
+    background-color: #C8102E;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(227, 6, 19, 0.35);
+}
+/* ====================== BOTÕES DE CONTATO ====================== */
+
+.link-btn {
+    display: block;
+    max-width: 420px;
+    margin: 0 auto 2rem auto;     /* centralizado + espaçamento entre botões */
+    padding: 20px 40px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 50px;
+    color: white;
+    background-color: #E30613;
+    box-shadow: 0 8px 25px rgba(227, 6, 19, 0.25);
+    transition: all 0.4s ease;
+    text-align: center;
+}
+
+.link-btn:hover {
+    background-color: #C8102E;
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(227, 6, 19, 0.35);
+}
+
+/* WhatsApp - Verde oficial */
+.link-btn.whatsapp {
+    background-color: #25D366;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+}
+
+.link-btn.whatsapp:hover {
+    background-color: #20ba5a;
+}
+
+/* Instagram - Gradiente oficial */
+.link-btn.instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    box-shadow: 0 8px 25px rgba(188, 24, 136, 0.35);
+}
+
+.link-btn.instagram:hover {
+    transform: translateY(-6px);
+}
+
+/* Responsivo para os botões */
+@media (max-width: 768px) {
+    .link-btn {
+        max-width: 100%;
+        padding: 18px 30px;
+        font-size: 1.25rem;
+        margin-bottom: 1.8rem;
+    }
+}

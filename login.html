@@ -1,0 +1,109 @@
+ <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="logo.png" type="image/png">
+  <title>LRFIT - Login</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      
+    }
+
+    .login-box {
+      background: #e4e4e4;
+      padding: 30px;
+      border-radius: 12px;
+      width: 300px;
+      box-shadow: 0 0 20px rgba(197, 197, 197, 0.5);
+    }
+
+    .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #E30613;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #111111;
+}
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #c4c4c4e7;
+      border: none;
+      border-radius: 6px;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background: #da0202;
+    
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #93c5fd;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    #msg {
+      margin-top: 10px;
+      text-align: center;
+      font-size: 14px;
+      color: rgba(255, 0, 0, 0.904);
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+     <a href="index.html" class="logo">
+      <strong>LR</strong><span>FIT</span>
+    </a>
+    <input type="email" id="email" placeholder="Seu email">
+    <input type="password" id="senha" placeholder="Sua senha">
+
+    <button onclick="login()">Entrar</button>
+    <button onclick="cadastrar()">Cadastrar</button>
+  
+
+    <div id="msg"></div>
+  </div>
+
+
+  
+<script type="module" src="login.js"></script>
+</body>
+</html>

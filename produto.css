@@ -1,0 +1,304 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+/* ====================== HEADER ====================== */
+.header {
+    background-color: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 1.2rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    color: #E30613;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #111111;
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    gap: 2.8rem;
+    list-style: none;
+}
+
+.menu a {
+    color: #222222;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.08rem;
+    transition: color 0.3s ease;
+}
+
+.menu a:hover {
+    color: #E30613;
+}
+    nav a {
+      color: #222;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+
+
+  
+
+    .btn {
+      background: #cb0000;
+      color: #fff;
+      border: none;
+      padding: 14px;
+      width: 100%;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #15803d;
+    }
+
+    
+
+    .cart {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+  padding: 20px;
+  transition: right .3s ease;
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.cart.open {
+  right: 0;
+}
+
+.cart-toggle {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #bd0707;
+  color: #fff;
+  font-size: 24px;
+  border: none;
+  padding: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.cart .fechar {
+  background: rgb(186, 0, 0);
+  margin-top: 10px;
+  width: 100%;
+}
+
+
+.cart .finalizar {
+   background: rgb(186, 0, 0);
+  margin-top: 10px;
+  width: 100%;
+}
+
+.cart-total {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+
+.remove-btn {
+  background: red;
+  border: none;
+  color: white;
+  margin-left: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+  padding: 2px 6px;
+}
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .produto {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .produto img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    .info {
+      flex: 1;
+    }
+
+    h1 {
+      margin-top: 0;
+    }
+
+    .btn {
+      background: red;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 200px;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background: darkred;
+    }
+
+    .produto-page {
+  display: grid;
+  grid-template-columns: 1.2fr 0.9fr;
+  gap: 40px;
+  padding: 60px 40px;
+}
+
+.galeria {
+  display: flex;
+  gap: 20px;
+}
+
+.miniaturas {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.miniaturas img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.imagem-principal {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagem-principal img {
+  width: 350px;
+}
+
+.info-produto {
+  max-width: 400px;
+}
+
+.info-produto h1 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.preco {
+  font-size: 32px;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+}
+
+.parcelamento {
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.compra-area {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.quantidade {
+  display: flex;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.quantidade button {
+  padding: 10px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.quantidade span {
+  padding: 10px 15px;
+}
+
+.btn-comprar {
+  background: red;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  flex: 1;
+}
+
+.mensagem-carrinho {
+  position: fixed;
+  top: 120px;
+  right: 30px;
+  background: #111;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 8px;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 10000;
+  font-weight: bold;
+}
+
+.mensagem-carrinho.mostrar {
+  opacity: 1;
+}

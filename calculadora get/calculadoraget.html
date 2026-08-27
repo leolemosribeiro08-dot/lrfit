@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="../logo.png" type="image/png">
+  <title>Calculadora de GET</title>
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+   <a href="../index.html" class="logo">
+      <strong>LR</strong><span>FIT</span>
+    </a>
+
+    <ul class="menu"> 
+      <li><a href="../suplementos/suplement.html">Suplementos</a></li>
+      <li><a href="calculadoraget.html">Calculadora get</a></li>
+      <li><a href="../dietas.html">Dietas</a></li>
+      <li><a href="../contato/contato.html">Contato</a></li>
+      <li><a href="../sobre.html">Sobre</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<div class"">
+<input type="text" id="nome" placeholder="Nome"><br><br>
+
+<select id="sexo">
+  <option value="homem">Homem</option>
+  <option value="mulher">Mulher</option>
+</select><br><br>
+
+<input type="number" id="idade" placeholder="Idade"><br><br>
+<input type="number" id="peso" placeholder="Peso (kg)"><br><br>
+<input type="number" id="altura" placeholder="Altura (cm)"><br><br>
+
+<select id="atividade">
+  <option value="1.2">Sedentário</option>
+  <option value="1.375">Leve</option>
+  <option value="1.55">Moderado</option>
+  <option value="1.725">Ativo</option>
+  <option value="1.9">Muito ativo</option>
+</select><br><br>
+</div>
+<button onclick="salvarAluno()">Calcular e Salvar</button>
+<p id="resultado"></p>
+<a href="alunos.html">ver alunos cadastrados</a>
+
+
+
+<script type="module" src="firebase.js"></script>
+<script type="module" src="script.js"></script>
+</body>
+</html>

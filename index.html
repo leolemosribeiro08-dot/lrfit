@@ -1,0 +1,189 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRFIT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="logo.png" type="image/png">
+</head>
+<body>
+
+<header class="header">
+  <nav class="nav">
+    <a href="index.html" class="logo">
+      <strong>LR</strong><span>FIT</span>
+    </a>
+
+
+     <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    
+
+    <ul class="menu" id="menu"> 
+      <button class="fechar-menu" onclick="toggleMenu()">×</button>
+      <li><a href="suplementos/suplement.html">Suplementos</a></li>
+      <li><a href="calculadora get/calculadoraget.html">Calculadora get</a></li>
+      <li><a href="contato/contato.html">Contato</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+    </ul>
+
+
+<button class="cart-toggle" onclick="toggleCart()">🛒</button>
+   
+    
+  </nav>
+</header>
+
+<section class="hero-slider">
+  <div class="slides">
+    <a href="suplementos/whey.html"><img src="img/fundo_whey.png" alt="whey"></a>
+    <a href="suplementos/creatina.html"><img src="img/fundo_creatina.png" alt="creatina"></a>
+    <a href="suplementos/pretreino.html"><img src="img/fundo_prétreino.png" alt="pretreino"></a>
+ 
+  </div>
+
+  <button class="btn-slider prev">&#10094;</button>
+  <button class="btn-slider next">&#10095;</button>
+</section>  
+
+
+
+<div id="cart" class="cart">
+  <h2>Carrinho</h2>
+  <ul id="cart-items"></ul>
+  <div class="cart-total">Total: R$ <span id="cart-total">0</span></div>
+  <button class="btn finalizar" onclick="finalizarCompra()">Finalizar compra</button>
+
+  <button class="btn fechar" onclick="toggleCart()">Fechar</button>
+</div>
+
+
+
+
+<main class="container">
+
+  <section class="categoria">
+    <h2 class="titulo-categoria">Creatinas</h2>
+    <div class="carrossel-produtos">
+
+      <div class="product">
+        <img src="../imgsuplementos/creatina.jpg" alt="Creatina Black Skull">
+        <h2>Creatina Monohidratada Black Skull 300g</h2>
+        <div class="price">R$ 50,00</div>
+        <button class="btn" onclick="addToCart('creatina black skull 300g', 50)">Comprar</button>
+        <a href="produto.html?id=1"><button class="btn">Ver detalhes</button></a>
+      </div>
+
+      <div class="product">
+        <img src="../imgsuplementos/creatinamaxtitanium.jpg" alt="Creatina Max Titanium">
+        <h2>Creatina Monohidratada Max Titanium 300g</h2>
+        <div class="price">R$ 75,00</div>
+        <button class="btn" onclick="addToCart('creatina-max', 75)">Comprar</button>
+        <a href="produto.html?id=2"><button class="btn">Ver detalhes</button></a>
+      </div>
+
+      <div class="product">
+        <img src="imgsuplementos/creatinagrowth.png" alt="Creatina Growth">
+        <h2>Creatina Monohidratada Growth 250g</h2>
+        <div class="price">R$ 50,00</div>
+        <button class="btn" onclick="addToCart('creatina-growth', 50)">Comprar</button>
+        <a href="produto.html?id=3"><button class="btn">Ver detalhes</button></a>
+      </div>
+
+    </div>
+  </section>
+
+
+<section class="categoria">
+  <h2 class="titulo-categoria">Whey</h2>
+  <div class="carrossel-produtos">
+
+    <div class="product">
+      <img src="imgsuplementos/wheygrowth.png" alt="Whey Growth">
+      <h2>Whey Protein Concentrado 1Kg - Growth</h2>
+      <div class="price">R$ 155,00</div>
+      <button class="btn" onclick="addToCart('4', 'Whey Protein Concentrado 1Kg - Growth', 155, 1)">Comprar</button>
+      <a href="produto.html?id=4"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+    <div class="product">
+      <img src="imgsuplementos/whey-protein-100-dark-lab-900g.png" alt="Whey dark lab">
+      <h2>Whey Protein 100% Pote 900g - Dark Lab</h2>
+      <div class="price">R$ 150,00</div>
+      <button class="btn" onclick="addToCart('5', 'Whey Protein 100% Pote 900g - Dark Lab', 150, 1)">Comprar</button>
+      <a href="produto.html?id=5"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+    <div class="product">
+      <img src="imgsuplementos/whey probiotica 100_ pure whey 900g.png" alt="Whey Probiótica">
+      <h2>Monster 100% Whey 900g - Probiotica</h2>
+      <div class="price">R$ 160,00</div>
+      <button class="btn" onclick="addToCart('6', 'Monster 100% Whey 900g - Probiotica', 160, 1)">Comprar</button>
+      <a href="produto.html?id=6"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+  </div>
+</section>
+
+<section class="categoria">
+  <h2 class="titulo-categoria">Pré-Treinos</h2>
+  <div class="carrossel-produtos">
+
+    <div class="product">
+      <img src="imgsuplementos/prétreinohaze_limão.png" alt="Pré treino Haze Growth">
+      <h2>Pré-treino Haze 300g - Growth</h2>
+      <div class="price">R$ 80,00</div>
+      <button class="btn" onclick="addToCart('7', 'Pré-treino Haze 300g - Growth', 80, 1)">Comprar</button>
+      <a href="produto.html?id=7"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+    <div class="product">
+      <img src="imgsuplementos/pré treino workout edige max titanium.png" alt="Pré treino Max Titanium">
+      <h2>Pré-treino Horus 150g - Max Titanium</h2>
+      <div class="price">R$ 80,00</div>
+      <button class="btn" onclick="addToCart('8', 'Pré-treino Horus 150g - Max Titanium', 80, 1)">Comprar</button>
+      <a href="produto.html?id=8"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+    <div class="product">
+      <img src="../imgsuplementos/pré treino insanity growth.png" alt="Pré treino Insanity Growth">
+      <h2>Pré-treino Insanity 300g - Growth</h2>
+      <div class="price">R$ 90,00</div>
+      <button class="btn" onclick="addToCart('9', 'Pré-treino Insanity 300g - Growth', 90, 1)">Comprar</button>
+      <a href="produto.html?id=9"><button class="btn">Ver detalhes</button></a>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <center>
+  © 2026 LRFIT
+  </center>
+</footer>
+
+
+
+
+
+<script src="script.js"></script>
+<script src="volta.js"></script>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("menu");
+  menu.classList.toggle("active");
+}
+</script>
+<div id="mensagem-carrinho" class="mensagem-carrinho">
+  Produto adicionado ao carrinho!
+</div>
+</body>
+</html>
